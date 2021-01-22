@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
-
+import { navigate } from "gatsby"
 import {
   User,
   AuthContextType,
@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
     netlifyIdentity.on("login", user => {
       checkHasUser(user)
       netlifyIdentity.close()
+      window && navigate("/app")
     })
     netlifyIdentity.on("logout", () => {
       setUser(null)

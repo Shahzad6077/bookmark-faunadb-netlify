@@ -28,6 +28,7 @@ const CrudComp: FC<Props> = () => {
   const setState = (obj: Partial<StateType>) =>
     setObjState(p => ({ ...p, ...obj }))
 
+  const list = data?.getAllBookmarksByUser || []
   return (
     <div className={classes.crudWrapper}>
       <CreateComp
@@ -42,9 +43,13 @@ const CrudComp: FC<Props> = () => {
         {loading ? (
           <div>Loading...</div>
         ) : !error ? (
-          data.getAllTodosById.map((data: BOOKMARK_DATA, i) => {
-            return <ItemWrapper key={data.id} {...data} />
-          })
+          list.length === 0 ? (
+            <p>Empty List</p>
+          ) : (
+            list?.map((data: BOOKMARK_DATA, i) => {
+              return <ItemWrapper key={data.id} {...data} />
+            })
+          )
         ) : (
           <p className="error">{`${error.toString()}`}</p>
         )}

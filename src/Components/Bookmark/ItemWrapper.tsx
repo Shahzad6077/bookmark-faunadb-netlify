@@ -34,9 +34,9 @@ const ItemWrapper: FC<Props> = ({ id, title, userId, link, ts }) => {
     update(cache, { data }) {
       cache.modify({
         fields: {
-          getAllTodosById(existingListRefs, { readField }) {
+          getAllBookmarksByUser(existingListRefs, { readField }) {
             return existingListRefs.filter(
-              itemRef => data.deleteTodo.id !== readField("id", itemRef)
+              itemRef => data.deleteBookmark.id !== readField("id", itemRef)
             )
           },
         },

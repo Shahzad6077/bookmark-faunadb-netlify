@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react"
+import React, { FC } from "react"
 import { SEO } from "../Components"
 import { Link } from "gatsby"
 type Props = {}
@@ -7,8 +7,9 @@ const Index: FC<Props> = () => {
   return (
     <div>
       <SEO title="Home" />
-      Bookmarking appp
-      <Link to="/app">Go to Dashboard</Link>
+      <Link to="/app" style={{ borderBottom: "1px solid" }}>
+        Go to Dashboard
+      </Link>
     </div>
   )
 }

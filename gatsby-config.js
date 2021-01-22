@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Bookmarking App`,
+    title: `Bookmar App`,
     description: `Faunadb with netlify functions as a serverless functions.`,
     author: `M Shahzad Ali`,
   },
