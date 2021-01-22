@@ -8,7 +8,7 @@ const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
 const typeDefs = gql`
   type Bookmark {
     id: ID
-    userId: string!
+    userId: String!
     title: String!
     link: String!
     ts: String
