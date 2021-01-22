@@ -10,7 +10,7 @@ import {
 import { useAuthContext } from "../Context/Auth"
 
 const createClient = (token: string) => {
-  const httpLink = new HttpLink({ uri: "/.netlify/functions/todographql" })
+  const httpLink = new HttpLink({ uri: "/.netlify/functions/bookmarkgraphql" })
 
   const authMiddleware = new ApolloLink((operation, forward) => {
     // add the authorization to the headers
